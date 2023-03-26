@@ -27,7 +27,12 @@ class MainActivity : AppCompatActivity() {
             }else if(!editGasolina.text.isNotEmpty()){
                 Toast.makeText(this, "insira o preço da gasolina", Toast.LENGTH_SHORT).show()
             }else{
-                val intent = Intent(this)
+                val intent = Intent(this, DetalhesActivity::class.java)
+
+                intent.putExtra("alcool", editAlcool.text.toString())
+                intent.putExtra("gasolina", editGasolina.text.toString())
+
+                startActivity(intent)
 
             }
         }
